@@ -36,7 +36,7 @@ data = JSON.parse(data);
 		data[0] = parseInt(Math.round(data[0]));
 		data[1] = parseInt(Math.round(data[1]));
 
-		nodes.push(new Node(data[0],data[1],Math.random()*1 - Math.random()*1,Math.random()*1 - Math.random()*1,Math.round(Math.random()*255),Math.round(Math.random()*255),Math.round(Math.random()*255)));
+		nodes.push(new Node(data[0],data[1],Math.random()*0.3 - Math.random()*0.3,Math.random()*0.3 - Math.random()*0.3,Math.round(Math.random()*255),Math.round(Math.random()*255),Math.round(Math.random()*255)));
 	}
 
 }
