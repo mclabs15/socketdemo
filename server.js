@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-
+try {
 app.use(express.static('client'));
 
 io.on('connection', function(socket){
@@ -97,3 +97,7 @@ io.emit('nodes',JSON.stringify(nodes));
 
 
 },10);
+}
+catch(e) {
+	console.log(e);
+}
