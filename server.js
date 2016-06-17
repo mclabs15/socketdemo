@@ -32,8 +32,8 @@ data = JSON.parse(data);
 
 	console.log('got data');
 	if(data.length == 2) {
-		data[0] = parseFloat(data[0]);
-		data[1] = parseFloat(data[1]);
+		data[0] = parseInt(Math.round(data[0]));
+		data[1] = parseInt(Math.round(data[1]));
 
 		nodes.push(new Node(data[0],data[1],Math.random()*1 - Math.random()*1,Math.random()*1 - Math.random()*1,Math.round(Math.random()*255),Math.round(Math.random()*255),Math.round(Math.random()*255)));
 	}

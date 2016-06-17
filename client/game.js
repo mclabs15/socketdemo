@@ -96,7 +96,7 @@ canvas.addEventListener('touchend',function(evt) {
 	evt.preventDefault();
 	var mp = evt.changedTouches;
 	for(var i = 0; i < mp.length; i++) {
-		socket.emit('evt',JSON.stringify([mp[i].pageX,mp[i].pageY]));
+		socket.emit('evt',JSON.stringify([mp[i].screenX,mp[i].screenY]));
 	}
 	console.log('clicked');
 });
