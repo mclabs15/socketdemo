@@ -64,14 +64,15 @@ this.yvel = yvel;
 this.r = r;
 this.g = g;
 this.b = b;
+this.age = 0;
 
 
 }
 Node.prototype.move = function() {
 	this.x += this.xvel;
 	this.y += this.yvel;
-
-	if(this.x < Global.minX || this.x > Global.maxX || this.y < Global.minY || this.y > Global.maxY) {
+	this.age++;
+	if(this.x < Global.minX || this.x > Global.maxX || this.y < Global.minY || this.y > Global.maxY || this.age >= 15*100) {
 		this.del = true;
 	}
 }
