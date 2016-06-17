@@ -92,9 +92,15 @@ canvas.addEventListener('mouseup',function(evt) {
 	socket.emit('evt',JSON.stringify([mp.x,mp.y]));
 	console.log('clicked');
 });
+
+
+var lastMove = null;
+canvas.addEvent('touchmove', function(event) {
+  lastMove = event;
+});
 canvas.addEventListener('touchend',function(evt) {
 	evt.preventDefault();
-	var mp = evt/*.changedTouches*/;
+	var mp = lastMove/*.changedTouches*/;
 	for(var i = 0; i < mp.touches.length; i++) {
 		socket.emit('evt',JSON.stringify([mp.touches[i].screenX,mp.touches[i].screenY]));
 	}
