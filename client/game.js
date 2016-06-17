@@ -100,9 +100,9 @@ canvas.addEvent('touchmove', function(event) {
 });
 canvas.addEventListener('touchend',function(evt) {
 	evt.preventDefault();
-	var mp = lastMove/*.changedTouches*/;
+	var mp = evt/*.changedTouches*/;
 	for(var i = 0; i < mp.touches.length; i++) {
-		socket.emit('evt',JSON.stringify([mp.touches[i].screenX,mp.touches[i].screenY]));
+		socket.emit('evt',JSON.stringify([mp.changedTouches[i].pageX,mp.changedTouches[i].pageY]));
 	}
 	console.log('clicked');
 });
