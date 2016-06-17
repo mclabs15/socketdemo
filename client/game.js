@@ -94,9 +94,9 @@ canvas.addEventListener('mouseup',function(evt) {
 });
 canvas.addEventListener('touchend',function(evt) {
 	evt.preventDefault();
-	var mp = evt.changedTouches;
-	for(var i = 0; i < mp.length; i++) {
-		socket.emit('evt',JSON.stringify([mp[i].screenX,mp[i].screenY]));
+	var mp = evt/*.changedTouches*/;
+	for(var i = 0; i < mp.touches.length; i++) {
+		socket.emit('evt',JSON.stringify([mp.touches[i].screenX,mp.touches[i].screenY]));
 	}
 	console.log('clicked');
 });
