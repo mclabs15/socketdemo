@@ -32,6 +32,7 @@ data = JSON.parse(data);
 
 	console.log('got data');
 	if(data.length == 2) {
+		console.log("("+data[0]+","+data[1]+")")
 		data[0] = parseInt(Math.round(data[0]));
 		data[1] = parseInt(Math.round(data[1]));
 
